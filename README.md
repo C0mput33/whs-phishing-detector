@@ -26,8 +26,8 @@
 | Model | Feature Set | Accuracy | Precision | Recall |
 | ----- | ----------- | -------- | --------- | ------ |
 | **LGBM**    | 14 URL heuristics (length, digits, entropy…) | 1.000 | 1.000 | 1.000 |
-| **CNN**     | Tokenised URL sequence (char‑level)         | 0.992 | 0.990 | 0.970 |
-| **Ensemble**| Soft‑Voting (LGBM + CNN)                    | **0.999** | **0.997** | **0.991** |
+| **CNN**     | Tokenised URL sequence (char‑level)         | 0.98 | 0.990 | 0.970 |
+| **Ensemble**| Soft‑Voting (LGBM + CNN)                    | **0.99** | **0.997** | **0.98** |
 
 > 📑 세부 실험 결과와 학습 파라미터는 [`notebooks/`](notebooks/) 폴더를 참고하세요.
 
@@ -123,8 +123,8 @@ Colab 실행 → **“Runtime > Change runtime type > GPU”** 선택 후 
 
 | Folder / File              | 내용                                   |
 | -------------------------- | ------------------------------------ |
-| `src/app.py`               | URL 입력 ↔ 앙상블 예측 ↔ 결과 시각화 (Streamlit) |
-| `notebooks/LGBM.ipynb`     | 14개 특징 추출 → LightGBM 학습 · SHAP 해석    |
+| `src/app.py`               | URL 입력 ↔ 앙상블 예측 ↔ 결과 시각화  |
+| `notebooks/LGBM.ipynb`     | 15개 특징 추출 → LightGBM 학습   |
 | `notebooks/CNN.ipynb`      | URL 문자열 토큰화 → 1D CNN 모델 학습           |
 | `notebooks/Ensemble.ipynb` | 로지스틱 Soft‑Voting → 최종 0.98 정확도      |
 | `data/*.csv`               | 정규 / 피싱 데이터셋 (전처리 포함)                |
@@ -135,9 +135,9 @@ Colab 실행 → **“Runtime > Change runtime type > GPU”** 선택 후 
 
 ## 📊 Performance & Explainability
 
-* **ROC‑AUC 1.00** (LGBM) / 0.998 (Ensemble)
-* SHAP Top 3 Features : `url_entropy`, `num_dots`, `contains_https`
-* Grad‑CAM 으로 CNN이 감지한 악성 토큰 시각화 → `docs/cam_examples.png`
+* **F1 Score** (LGBM) / 0.998 (Ensemble)
+* SHAP Top 3 Features : `redirection`, `kr`, `hyperlinks`
+
 
 ---
 
