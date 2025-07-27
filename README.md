@@ -32,6 +32,39 @@
 
 ---
 
+## 📊 Datasets
+
+| 구분 | 파일 | 샘플 수 | 출처 / 비고 |
+|------|------|--------:|-------------|
+| **정상 사이트** | `normal_data.csv` | 50000 | Alexa |
+| **피싱 사이트** | `phishing_data.xls` | 184860 | OpenPhish, PhishTank |
+| **검증 셋** | `valid_data.csv` | 70000 | 정상:피싱 = 1:1 |
+| **통합 & 전처리** | `model_data.csv` | 289993 | 15 features, label 포함 |
+
+
+### 📑 Dataset Features
+| No | Feature Name | 설명 |
+| -- | ------------ | ---- |
+| 1  | `url` | 원본 URL 문자열 |
+| 2  | `IP_LIKE` | IP 주소 형식 여부(도메인 대신 숫자) |
+| 3  | `AT` | ‘@’ 문자 포함 여부 → 리디렉션 가능성 |
+| 4  | `URL_Depth` | 슬래시(⧸) 깊이, 디렉터리 단계 수 |
+| 5  | `Redirection` | ‘//’ 중복 사용 횟수 |
+| 6  | `Is_Https` | HTTPS 사용 (1) / 미사용 (0) |
+| 7  | `TINY_URL` | URL 단축 서비스 여부 |
+| 8  | `Check_Hyphen` | 도메인에 ‘-’ 하이픈 포함 여부 |
+| 9  | `Query` | 쿼리 스트링( ?key= ) 존재 여부 |
+| 10 | `Domain_Age` | WHOIS 기준 도메인 연령(일) |
+| 11 | `Domain_end` | 도메인 만료까지 남은 기간(일) |
+| 12 | `Mouseover` | HTML a 태그 〈onmouseover〉 속성 여부 |
+| 13 | `Web_forwards` | 메타 리프레시 횟수 |
+| 14 | `Hyperlinks` | 외부 링크 개수 |
+| 15 | `Domain_Cons` | 도메인 일관성 점수 |
+| 16 | `Tokenized_url` | 전처리된 URL 토큰 벡터 |
+| 17 | `Label` | 0 (정상) / 1 (피싱) |
+
+---
+
 ## 📂 Project Structure
 ```text
 whs-phishing-detector/
@@ -44,8 +77,9 @@ whs-phishing-detector/
 ├── data/   (Git LFS)         # raw / processed CSV · XLS
 │   ├── phishing_data.xls
 │   ├── normal_data.csv
-│   ├── phish_dataset.ipynb
-│   ├── phish_model_temp.ipynb
+│   ├── phish_dataset.ipynb   #피싱 사이트 피쳐 추출 함수
+│   ├── normal_dataset1.ipynb   #정상 사이트 피쳐 추출 함수
+│   ├── phish_model_temp.ipynb  #피싱 URL을 판별하는 랜덤포레스트 모델을 학습하고 Flask API로 배포하는 Jupyter 노트북
 │   ├── valid_data.csv
 │   └── model_data.csv
 ├── docs/
@@ -104,7 +138,7 @@ Colab 실행 → **“Runtime > Change runtime type > GPU”** 선택 후 
 ## 📝 Citation
 
 ```
-@misc{choi2024whsphish,
+@misc{kim2024whsphish,
   title  = {Ensemble Learning for Phishing URL Detection},
   author = {KIM, Haechan and Team Tteok-bap},
   year   = {2024},
