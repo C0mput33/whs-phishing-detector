@@ -1,7 +1,7 @@
 
 # 🛡 WHS Phishing URL Detector
 
-> 화이트햇스쿨 2기 프로젝트 — 머신러닝 (**LGBM**) + 딥러닝 (**CNN**) 앙상블 (URL을 통해 피싱 여부 판별)
+> 화이트햇스쿨 2기 팀 프로젝트 — 머신러닝 (**LGBM**) + 딥러닝 (**CNN**) 앙상블 (URL을 통해 피싱 여부 판별)
 
 
 <p align="center">
