@@ -1,7 +1,7 @@
 
 # 🛡 WHS Phishing URL Detector
 
-> 화이트햇스쿨 2기 프로젝트 — 머신러닝 (**LGBM**) + 딥러닝 (**CNN**) 앙상블 **0.97 정확도** 달성  
+> 화이트햇스쿨 2기 프로젝트 — 머신러닝 (**LGBM**) + 딥러닝 (**CNN**) 앙상블
 
 
 <p align="center">
