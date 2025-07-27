@@ -1,7 +1,7 @@
 
 # 🛡 WHS Phishing URL Detector
 
-> 화이트햇스쿨 2기 프로젝트 — 머신러닝 (**LGBM**) + 딥러닝 (**CNN**) 앙상블
+> 화이트햇스쿨 2기 프로젝트 — 머신러닝 (**LGBM**) + 딥러닝 (**CNN**) 앙상블 (URL을 통해 피싱 여부 판별)
 
 
 <p align="center">
@@ -9,10 +9,13 @@
     <img src="https://img.shields.io/badge/Demo-Streamlit-ff4b4b?logo=streamlit&logoColor=white" />
   </a>
   <a href="https://colab.research.google.com/github/C0mput33/whs-phishing-detector/blob/main/notebooks/Ensemble.ipynb">
-    <img src="https://img.shields.io/badge/Run_in‑Colab-F9AB00?logo=googlecolab&logoColor=white" />
+    <img src="https://img.shields.io/badge/Run_in_Colab-F9AB00?logo=googlecolab&logoColor=white" />
   </a>
-  <a href="docs/whitehat_paper.pdf">
-    <img src="https://img.shields.io/badge/Whitepaper-PDF-blueviolet" />
+  <a href="docs/논문%20초안_2.pdf">
+    <img src="https://img.shields.io/badge/Paper-PDF-blueviolet" />
+  </a>
+  <a href="docs/팀_떡밥_최종발표.pdf">
+    <img src="https://img.shields.io/badge/Slides-PDF-important" />
   </a>
 </p>
 
@@ -103,7 +106,7 @@ Colab 실행 → **“Runtime > Change runtime type > GPU”** 선택 후 
 ```
 @misc{choi2024whsphish,
   title  = {Ensemble Learning for Phishing URL Detection},
-  author = {Choi, Daehyun and Team Tteok-bap},
+  author = {KIM, Haechan and Team Tteok-bap},
   year   = {2024},
   note   = {WhiteHat School 2nd Generation Capstone}
 }
@@ -121,8 +124,5 @@ Colab 실행 → **“Runtime > Change runtime type > GPU”** 선택 후 
 ---
 
 > Made with **WhiteHat School 2nd Gen (2024)**
-
-
-```
 
 
